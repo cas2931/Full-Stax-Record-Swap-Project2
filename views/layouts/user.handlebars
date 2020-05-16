@@ -1,0 +1,73 @@
+  <div class="container">
+    <div class="row">
+      <div class="three column"> 
+        <h3>Unlistened to Albums</h3> 
+        {{#each Albums}}
+          {{#unless this.listened}}
+            <div> 
+             <form>
+               
+             </form>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="three column"> 
+        <h3>Listened to Albums</h3>
+        {{#each Albums}}
+          {{#if this.listened}}
+            <div>
+                <p>Title:    {{this.title}}</p>  
+                <p>Artist: {{this.artist}}</p> 
+                <p>Review: {{this.review}}</p>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div> 
+
+       <div class="three column"> 
+        <h3>Unlistened to Songs</h3> 
+        {{#each Songs}}
+          {{#unless this.listened}}
+            <div> 
+             <form>
+               
+             </form>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="three column"> 
+        <h3>Listened to Songs</h3>
+        {{#each Songs}}
+          {{#if this.listened}}
+            <div>
+                <p>Title:    {{this.title}}</p>  
+                <p>Artist: {{this.artist}}</p> 
+                <p>Review: {{this.review}}</p>
+            </div>
+          {{/if}}
+        {{/each}} 
+
+      </div> 
+    </div> 
+    <div class="row"> 
+        <div class="six column">
+          <h3>Add An Album</h3> 
+            <form>
+                <label for="album-title-input">Title</label>
+                    <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="album-title-input">
+            </form>
+        </div> 
+        <div class="six column">
+          <h3>Add A Song</h3>
+          <form>
+
+          </form>
+        </div>
+    </div>
+  </div>
+
+
