@@ -1,10 +1,35 @@
 var db = require("../models");
 
-module.exports = function(app) {
-   // PUT route for updating albums
+module.exports = function(app) { 
+     // Get route for getting all of the albums
+//   app.get("/api/posts", function(req, res) {
+//     var query = {};
+//     if (req.query.author_id) {
+//       query.AuthorId = req.query.author_id;
+//     }
+//     db.Post.findAll({
+//       where: query
+//     }).then(function(dbPost) {
+//       res.json(dbPost);
+//     });
+//   });
+
+  // Get route for retrieving a single song
+  app.get("/api/songs/:id", function(req, res) {
+    db.Song.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbSong) {
+      console.log(dbSong);
+      res.json(dbSong);
+    });
+  });
+  
+   // PUT route for updating songs
    app.put("/api/songs", function(req, res) {
     db.Song.update(
-      //req.body,
+      req.body,
       {
         where: {
           //id: req.body.id 
@@ -13,8 +38,9 @@ module.exports = function(app) {
       }).then(function(dbSong) {
       res.json(dbSong);
     });
-  });
- // DELETE route for deleting albums 
+  }); 
+
+ // DELETE route for deleting songs 
  app.delete("/api/songs/:id", function(req, res) {
     db.Album.destroy({
       where: {
@@ -23,11 +49,12 @@ module.exports = function(app) {
     }).then(function(dbAlbum) {
       res.json(dbSong);
     });
-  });
- // POST route for saving a new album
+  }); 
+
+ // POST route for saving a new song
  app.post("/api/songs", function(req, res) {
-    db.Album.create(req.body).then(function(dbAlbum) {
-      res.json(dbSongs);
+    db.Album.create(req.body).then(function(dbSong) {
+      res.json(dbSong);
     });
   });
 }
