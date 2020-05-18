@@ -54,7 +54,7 @@ module.exports = function(app) {
      // POST route for saving a new album
      app.post("/api/albums", function(req, res) {
         db.Album.create(req.body).then(function(dbAlbum) {
-          res.json(dbPost);
+          res.json(dbAlbum);
         });
       });
     }

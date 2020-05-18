@@ -26,6 +26,16 @@ module.exports = function(sequelize, DataTypes) {
   // In this case, before a User is created, we will automatically hash their password
   User.addHook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
-  });
+  }); 
+  User.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    User.hasMany(models.Song, {
+      onDelete: "cascade"
+    }); 
+    User.hasMany(models.Album, {
+      onDelete: "cascade"
+    }); 
+  } 
   return User;
 };

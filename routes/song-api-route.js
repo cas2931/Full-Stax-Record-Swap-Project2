@@ -25,7 +25,7 @@ module.exports = function(app) {
       res.json(dbSong);
     });
   });
-  
+
    // PUT route for updating songs
    app.put("/api/songs", function(req, res) {
     db.Song.update(
@@ -46,7 +46,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbAlbum) {
+    }).then(function(dbSong) {
       res.json(dbSong);
     });
   }); 
