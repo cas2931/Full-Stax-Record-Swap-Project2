@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "passport_demo",
+    "password": "Ch!m3ra-57",
+    "database": "full_stax_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
