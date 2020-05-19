@@ -25,6 +25,9 @@ app.set("view engine", "handlebars");
 
 app.get('/', function (req, res) {
   res.render('index'); 
+}); 
+app.get('/user', function (req, res) {
+  res.render('user'); 
 });
 
 // Requiring our routes
