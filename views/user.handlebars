@@ -28,8 +28,8 @@
         <h3>Unlistened to Songs</h3> 
         {{#each Songs}}
           {{#unless this.listened}}
-            <div> 
-            
+            <div>  
+
             </div>
           {{/unless}}
         {{/each}}
@@ -52,21 +52,23 @@
     <div class="grid-x"> 
         <div class="cell medium-6">
           <h3>Add An Album</h3> 
-            <form>
+            <form action="/api/albums" method="POST">
               <label>Title
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="title">
               </label>  
               <label>Artist
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="artist">
               </label> 
               <label>Review
-                <input type="email" class="form-control" placeholder="Optional">
-              </label>  
+                <input type="text" class="form-control" placeholder="Optional" name="review">
+              </label> 
+              <label for="submitAlbum" class="button">Add Album</label>
+                <input type="submit">  
             </form>
         </div> 
         <div class="cell medium-6">
           <h3>Add A Song</h3>
-          <form>
+          <form action="/api/songs" method="POST">
             <label>Title
                 <input type="text" class="form-control">
               </label>  
@@ -74,8 +76,10 @@
                 <input type="text" class="form-control">
               </label> 
               <label>Review
-                <input type="email" class="form-control" placeholder="Optional">
+                <input type="text" class="form-control" placeholder="Optional">
               </label>  
+              <label for="submitSong" class="button">Add Song</label>
+                <input type="submit">   
           </form>
         </div>
     </div>
