@@ -1,32 +1,65 @@
 <div class="grid-container">
   <div class="grid-x">
     <div class="cell medium-6">
-       <h2>Sign Up Here</h2>
+       {{!-- <h2>Sign Up Here</h2>
         <form class="signup">
           <label>Email Address
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+            <input type="email" class="form-control" id="SUemail-input" placeholder="Email">
           </label> 
           <label>Password
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+            <input type="password" class="form-control" id="SUpassword-input" placeholder="Password">
           </label> 
-            <label for="exampleFileUpload" class="button">Submit</label>
-      </form>
+           <button class="submit">Submit</button>
+      </form> --}} 
+      <div class="translucent-form-overlay">
+              <form class="signup">
+                <h3 class="text-center">Sign Up Here</h3>
+                  <div class="row columns">
+                    <label>Email Address
+                      <input type="email" class="form-control" id="SUemail-input" placeholder="Email" name="email">
+                    </label> 
+                  </div>
+                  <div class="row columns">
+                    <label>Password
+                      <input type="password" class="form-control" id="SUpassword-input" placeholder="Password"name="password">
+                  </label> 
+                  </div>
+                  <button type="submit" class="warning button expanded search-button">Sign Up!</button>
+                </form>
+                </div>
     </div> 
     <div class="cell medium-6">
-       <h2>Login Here</h2>
+       {{!-- <h2>Login Here</h2>
       <form class="login">
           <label>Email Address
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+            <input type="email" class="form-control" id="LIemail-input" placeholder="Email" name="email">
           </label> 
           <label>Password
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+            <input type="password" class="form-control" id="LIpassword-input" placeholder="Password" name="password">
           </label>  
-          <label for="exampleFileUpload" class="button">Submit</label>
-      </form> 
+          <button class="submit">Submit</button>
+      </form>  --}}
+       <div class="translucent-form-overlay">
+              <form class="login">
+                <h3 class="text-center">Login Here</h3>
+                  <div class="row columns">
+                    <label>Email Address
+                      <input type="email" class="form-control" id="LIemail-input" placeholder="Email" name="email">
+                    </label> 
+                  </div>
+                  <div class="row columns">
+                    <label>Password
+                      <input type="password" class="form-control" id="LIpassword-input" placeholder="Password" name="password">
+                  </label> 
+                  </div>
+                  <button type="submit" class="primary button expanded search-button">Login!</button>
+                </form>
+                </div>
     </div>
   </div>
-</div>
-  
+</div> 
+
+       
   
   
   
