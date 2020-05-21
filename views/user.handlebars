@@ -1,88 +1,94 @@
-  <div class="grid-container">
-    <div class="grid-x">
-      <div class="cell small-3"> 
-        <h3>Unlistened to Albums</h3> 
-        {{#each Albums}}
-          {{#unless this.listened}}
-            <div> 
-             
-            </div>
-          {{/unless}}
-        {{/each}}
+<div class="grid-container">
+  <div class="grid-x">
+    <div class="cell small-3">
+      <h3>Unlistened to Albums</h3>
+      {{#each Songs}}
+      {{#unless this.listened}}
+      <div>
+        <p>Title: {{this.title}}</p>
+        <p>Artist: {{this.artist}}</p>
+        <p>Review: {{this.review}}</p>
       </div>
-
-      <div class="cell small-3"> 
-        <h3>Listened to Albums</h3>
-        {{#each Albums}}
-          {{#if this.listened}}
-            <div>
-                <p>Title:    {{this.title}}</p>  
-                <p>Artist: {{this.artist}}</p> 
-                <p>Review: {{this.review}}</p>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div> 
-
-       <div class="cell small-3"> 
-        <h3>Unlistened to Songs</h3> 
-        {{#each Songs}}
-          {{#unless this.listened}}
-            <div>  
-
-            </div>
-          {{/unless}}
-        {{/each}}
-      </div>
-
-      <div class="cell small-3"> 
-        <h3>Listened to Songs</h3>
-        {{#each Songs}}
-          {{#if this.listened}}
-            <div>
-                <p>Title:    {{this.title}}</p>  
-                <p>Artist: {{this.artist}}</p> 
-                <p>Review: {{this.review}}</p>
-            </div>
-          {{/if}}
-        {{/each}} 
-      </div>  
-       </div>  
-
-    <div class="grid-x"> 
+      {{/unless}}
+      {{/each}}
+      <div class="grid-x">
         <div class="cell medium-6">
-          <h3>Add An Album</h3> 
-            <form action="/api/albums" method="POST">
-              <label>Title
-                <input type="text" class="form-control" name="title">
-              </label>  
-              <label>Artist
-                <input type="text" class="form-control" name="artist">
-              </label> 
-              <label>Review
-                <input type="text" class="form-control" placeholder="Optional" name="review">
-              </label> 
-              <label for="submitAlbum" class="button">Add Album</label>
-                <input type="submit">  
-            </form>
-        </div> 
+          <h3>Add An Album</h3>
+          <form action="/api/albums" method="POST">
+            <label>Title
+              <input type="text" class="form-control" name="title">
+            </label>
+            <label>Artist
+              <input type="text" class="form-control" name="artist">
+            </label>
+            <label>Review
+              <input type="text" class="form-control" placeholder="Optional" name="review">
+            </label>
+            <button class="primary button" class="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="grid-x">
+        <div class="cell small-3">
+          <h3>Listened to Albums</h3>
+          {{#each Albums}}
+          {{#if this.listened}}
+          <div>
+            <p>Title: {{this.title}}</p>
+            <p>Artist: {{this.artist}}</p>
+            <p>Review: {{this.review}}</p>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid-x">
+      <div class="cell small-3">
+        <h3>Unlistened to Songs</h3>
+        {{#each Songs}}
+        {{#unless this.listened}}
+        <div>
+          <p>Title: {{this.title}}</p>
+          <p>Artist: {{this.artist}}</p>
+          <p>Review: {{this.review}}</p>
+        </div>
+        {{/unless}}
+        {{/each}}
         <div class="cell medium-6">
           <h3>Add A Song</h3>
           <form action="/api/songs" method="POST">
             <label>Title
-                <input type="text" class="form-control">
-              </label>  
-              <label>Artist
-                <input type="text" class="form-control">
-              </label> 
-              <label>Review
-                <input type="text" class="form-control" placeholder="Optional">
-              </label>  
-              <label for="submitSong" class="button">Add Song</label>
-                <input type="submit">   
+              <input type="text" class="form-control">
+            </label>
+            <label>Artist
+              <input type="text" class="form-control">
+            </label>
+            <label>Review
+              <input type="text" class="form-control" placeholder="Optional">
+            </label>
+            <button class="primary button" class="submit">Submit</button>
           </form>
         </div>
+        <div class="grid-x">
+          <div class="cell small-3">
+            <h3>Listened to Songs</h3>
+            {{#each Albums}}
+            {{#if this.listened}}
+            <div>
+              <p>Title: {{this.title}}</p>
+              <p>Artist: {{this.artist}}</p>
+              <p>Review: {{this.review}}</p>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
+</div>
+</div>

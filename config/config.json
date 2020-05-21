@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Ch!m3ra-57",
+    "password": "Fabian",
     "database": "full_stax_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
