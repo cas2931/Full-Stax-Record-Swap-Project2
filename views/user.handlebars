@@ -45,21 +45,21 @@
     <div class="grid-x"> 
       <div class="cell medium-12">
          <div class="translucent-form-overlay">
-              <form action="/api/albums" method="POST">
+              <form class="albums">
                 <h3 class="text-center">Add An Album</h3>
                   <div class="row columns">
                     <label>Title
-                    <input type="text" name="title">
+                    <input type="text" name="title" class="title-input">
                     </label>
                   </div>
                   <div class="row columns">
                     <label>Artist
-                    <input type="text" name="artist">
+                    <input type="text" name="artist" class="artist-input">
                     </label>
                   </div>
                   <div class="row columns">
                    <label>Review
-                    <input type="text" name="review" placeholder="Optional">
+                    <input type="text" name="review" placeholder="Optional" class="review-input">
                     </label>
                   </div>
                   <button type="submit" class="secondary button expanded search-button">Submit Album</button>
