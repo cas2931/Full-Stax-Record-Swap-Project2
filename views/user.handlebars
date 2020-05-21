@@ -8,8 +8,13 @@
           </span> 
         {{#each Albums}}
           {{#unless this.listened}}
-            <div> 
-             
+            <div>  
+            <form action="/api/albums" method="PUT">
+              <p>Title:    {{this.title}}</p>  
+              <p>Artist: {{this.artist}}</p> 
+              <p>Review: {{this.review}}</p> 
+              <button type="submit" class="warning button">Listened</button> 
+            </form>
             </div>
           {{/unless}}
         {{/each}}
@@ -21,10 +26,13 @@
           </span>
         {{#each Albums}}
           {{#if this.listened}}
-            <div>
-                <p>Title:    {{this.title}}</p>  
-                <p>Artist: {{this.artist}}</p> 
-                <p>Review: {{this.review}}</p>
+            <div> 
+              <form action="/api/albums/:id" method="DELETE">
+              <p>Title:    {{this.title}}</p>  
+              <p>Artist: {{this.artist}}</p> 
+              <p>Review: {{this.review}}</p>  
+               <button type="submit" class="warning button">Remove Album</button> 
+              </form> 
             </div>
           {{/if}}
         {{/each}}
@@ -76,8 +84,13 @@
           </span>  
         {{#each Songs}}
           {{#unless this.listened}}
-            <div>  
-
+            <div> 
+              <form action="/api/songs" method="PUT">
+                <p>Title:    {{this.title}}</p>  
+                <p>Artist: {{this.artist}}</p> 
+                <p>Review: {{this.review}}</p> 
+                 <button type="submit" class="warning button">Listened</button> 
+                </form>  
             </div>
           {{/unless}}
         {{/each}}
@@ -89,10 +102,12 @@
           </span>
         {{#each Songs}}
           {{#if this.listened}}
-            <div>
+            <div> 
+             <form action="/api/songs/:id" method="DELETE">
                 <p>Title:    {{this.title}}</p>  
                 <p>Artist: {{this.artist}}</p> 
-                <p>Review: {{this.review}}</p>
+                <p>Review: {{this.review}}</p>    
+              </form>
             </div>
           {{/if}}
         {{/each}} 

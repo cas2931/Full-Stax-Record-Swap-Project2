@@ -46,7 +46,7 @@ body {
 .hero-section {
   background: url("https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg") 50% no-repeat;
   background-size: cover;
-  height: 30vh;
+  height: 20vh;
   text-align: center;
   display: -webkit-flex;
   display: -ms-flexbox;

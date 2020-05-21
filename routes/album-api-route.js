@@ -29,7 +29,7 @@ module.exports = function(app) {
     // PUT route for updating albums
     app.put("/api/albums", function(req, res) {
         db.Album.update(
-          req.body,
+          req.body.listened,
           {
             where: {
               //id: req.body.id 

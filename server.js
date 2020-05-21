@@ -21,14 +21,20 @@ app.use(passport.session());
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars"); 
+app.set("view engine", "handlebars");  
 
+//index.handlebars
 app.get('/', function (req, res) {
-  res.render('index'); 
-}); 
-app.get('/user', function (req, res) {
-  res.render('user'); 
+  res.render('index');   
+  //res.render(path.join(__dirname, "../views/index.handlebars"));
 });
+
+//user.handlebars
+app.get('/user', function (req, res) {
+  res.render('user');  
+  //res.render(path.join(__dirname, "../views/user.handlebars"));
+}); 
+
 
 // Requiring our routes
 //require("./routes/html-routes.js")(app);

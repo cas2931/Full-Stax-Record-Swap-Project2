@@ -29,7 +29,8 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        window.location.render("user");
+        window.location.replace('/');
+        //response.redirect(path.join(__dirname, "../views/index.handlebars"));
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
