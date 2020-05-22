@@ -48,11 +48,12 @@ $(document).ready(function() {
   });
 
   songListenForm.on("submit", function(event) {
-  event.preventDefault(); 
+  event.preventDefault();  
+  listenSong();
   function listenSong(listened) {
     $.put("/api/songs", {
       listened: '1',
-      UserId: localStorage.getItem("UserId")
+      id: $(this).attr("data-id")
     })
       .then(function(response) {
           console.log(response);

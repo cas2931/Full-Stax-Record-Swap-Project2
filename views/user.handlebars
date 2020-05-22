@@ -13,7 +13,7 @@
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p> 
-              <button type="submit" class="warning button">Listened</button> 
+              <button type="submit" class="warning button" data-id={{this.id}}>Listened</button> 
             </form>
             </div>
           {{/unless}}
@@ -27,11 +27,11 @@
         {{#each albums}}
           {{#if this.listened}}
             <div> 
-              <form action="/api/albums/:id" method="DELETE">
+          
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p>  
-               <button type="submit" class="warning button">Remove Album</button> 
+               
               </form> 
             </div>
           {{/if}}
@@ -89,7 +89,7 @@
                 <p>Title:    {{this.title}}</p>  
                 <p>Artist: {{this.artist}}</p> 
                 <p>Review: {{this.review}}</p> 
-                 <button type="submit" class="warning button">Listened</button> 
+                 <button type="submit" class="warning button" data-id={{this.id}}>Listened</button> 
                 </form>  
             </div>
           {{/unless}}
@@ -142,9 +142,35 @@
                 </div>
             </div>
         </div>  
-        </div> 
+        </div>  
+<br>
+<br>
+<br>
 
-           
-
-
+<div class="grid-container">
+  <div class="grid-x"> 
+    <div class="cell medium-12">
+      <div class="musicPlayer">
+        <h3 class="text-center">Full Stax Music Player (Powered by SoundCloud©️)</h3>
+          <div class="row columns"> 
+            <form id="playerSubmit">
+              <input type="text" placeholder="Please Enter a Song, Artist, Album, Etc..."> 
+              <button type="submit" class="primary button expanded search-button">Enjoy</button> 
+            </form> 
+            <div class="expanded button-group">
+              <a class="secondary button" id="prevBtn">PREVIOUS</a>
+              <a class="success button" id="playBtn">PLAY</a>
+              <a class="warning button" id="pauseBtn">PAUSE</a>
+              <a class="alert button" id="stopBtn">STOP</a> 
+              <a class="secondary button" id="nextBtn">NEXT</a>
+            </div> 
+              <div class="volumeSlider" class="align-center">
+                <input class="volumeStyle" id="volControl" type="range" min='0' max='100' value='100' step='1'
+                oninput="SetVolume(this.Value)" onchange="SetVolume(this.Value)"></input>
+              </div>
+          </div>
+      </div> 
+    </div>
+  </div> 
+</div>
 
