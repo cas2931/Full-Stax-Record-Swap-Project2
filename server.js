@@ -30,8 +30,15 @@ app.get('/', function (req, res) {
 });
 
 //user.handlebars
-app.get('/user', function (req, res) {
-  res.render('user');  
+app.get('/user/:id', async function (req, res) {
+
+  const albums = await db.Album.findAll({raw: true, where: {UserId: req.params.id}})
+  console.log(albums); 
+
+  const songs = await db.Song.findAll({raw: true, where: {UserId: req.params.id}}) 
+  console.log(songs);
+  
+  res.render('user', {albums}, {songs});  
   //res.render(path.join(__dirname, "../views/user.handlebars"));
 }); 
 
