@@ -8,8 +8,8 @@
           </span> 
         {{#each albums}}
           {{#unless this.listened}}
-            <div>  
-            <form action="/api/albums" method="PUT">
+            <div class="album">  
+            <form class="albumUnlistened"> 
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p> 
@@ -85,7 +85,7 @@
         {{#each songs}}
           {{#unless this.listened}}
             <div> 
-              <form action="/api/songs" method="PUT">
+              <form class="songUnlistened">
                 <p>Title:    {{this.title}}</p>  
                 <p>Artist: {{this.artist}}</p> 
                 <p>Review: {{this.review}}</p> 
@@ -124,17 +124,17 @@
                 <h3 class="text-center">Add A Song</h3>
                   <div class="row columns">
                     <label>Title
-                    <input type="text" name="title" class="title-input">
+                    <input type="text" name="title" class="title-song">
                     </label>
                   </div>
                   <div class="row columns">
                     <label>Artist
-                    <input type="text" name="artist" class="artist-input">
+                    <input type="text" name="artist" class="artist-song">
                     </label>
                   </div>
                   <div class="row columns">
                    <label>Review
-                    <input type="text" name="review" placeholder="Optional" class="review-input">
+                    <input type="text" name="review" placeholder="Optional" class="review-song">
                     </label>
                   </div>
                   <button type="submit" class="secondary button expanded search-button">Submit Song</button>

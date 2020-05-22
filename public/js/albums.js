@@ -3,7 +3,9 @@ $(document).ready(function() {
     var albumForm = $("form.album");
     var titleInput = $("input.title-input");
     var artistInput = $("input.artist-input");  
-    var reviewInput = $("input.review-input");
+    var reviewInput = $("input.review-input"); 
+
+    var albumListenForm = $("form.albumUnlistened");
 
   
     // When the form is submitted, we validate there's an email and password entered
@@ -44,5 +46,23 @@ $(document).ready(function() {
           console.log(err);
         });
     }
-  });
+  }); 
   
+  // albumListenForm.on("submit", function(event) {
+  // event.preventDefault(); 
+  // function listenAlbum(listened) {
+  //       $.put("/api/albums", {
+  //         listened: '1',
+  //         //UserId: localStorage.getItem("UserId")
+  //       })
+  //         .then(function(response) {
+  //             console.log(response);
+  //           window.location.reload();
+  //           //response.redirect(path.join(__dirname, "../views/user.handlebars"));
+  //           // If there's an error, log the error
+  //         })
+  //         .catch(function(err) {
+  //           console.log(err);
+  //         });
+  //     } 
+  //   });

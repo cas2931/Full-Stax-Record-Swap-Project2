@@ -30,19 +30,25 @@ app.get('/', function (req, res) {
 });
 
 //user.handlebars
-app.get('/user/:id', async function (req, res) {
+// app.get('/user/:id', async function (req, res) {
 
-  const albums = await db.Album.findAll({raw: true, where: {UserId: req.params.id}})
-  console.log(albums); 
+//   const albums = await db.Album.findAll({raw: true, where: {UserId: req.params.id}})
+//   console.log(albums); 
+
+//   // const songs = await db.Song.findAll({raw: true, where: {UserId: req.params.id}}) 
+//   // console.log(songs);
+  
+//   res.render('user', {albums});  
+//   //res.render(path.join(__dirname, "../views/user.handlebars"));
+// }); 
+
+app.get('/user/:id', async function (req, res) {
 
   const songs = await db.Song.findAll({raw: true, where: {UserId: req.params.id}}) 
   console.log(songs);
   
-  res.render('user', {albums}, {songs});  
-  //res.render(path.join(__dirname, "../views/user.handlebars"));
-}); 
-
-
+  res.render('user', {songs}); 
+  }); 
 // Requiring our routes
 //require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app); 

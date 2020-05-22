@@ -28,7 +28,8 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function(response) {localStorage.setItem("UserId",response.id)
+      .then(function(response) {
+        localStorage.setItem("UserId",response.id)
         window.location.replace("/user/" + response.id);
         //response.redirect(path.join(__dirname, "../views/user.handlebars"));
         // If there's an error, log the error
