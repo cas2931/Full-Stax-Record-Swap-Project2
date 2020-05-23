@@ -6,14 +6,14 @@
         <span class="label alert">
           <h3 class="text-left">Unlistened to Albums</h3>
           </span> 
-        {{#each Albums}}
+        {{#each albums}}
           {{#unless this.listened}}
-            <div>  
-            <form action="/api/albums" method="PUT">
+            <div class="album">  
+            <form class="albumUnlistened"> 
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p> 
-              <button type="submit" class="warning button">Listened</button> 
+              <button type="submit" class="warning button" data-id={{this.id}}>Listened</button> 
             </form>
             </div>
           {{/unless}}
@@ -24,14 +24,14 @@
         <span class="label success">
           <h3 class="text-right">Listened to Albums</h3>
           </span>
-        {{#each Albums}}
+        {{#each albums}}
           {{#if this.listened}}
             <div> 
-              <form action="/api/albums/:id" method="DELETE">
+          
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p>  
-               <button type="submit" class="warning button">Remove Album</button> 
+               
               </form> 
             </div>
           {{/if}}
@@ -45,7 +45,7 @@
     <div class="grid-x"> 
       <div class="cell medium-12">
          <div class="translucent-form-overlay">
-              <form class="albums">
+              <form class="album">
                 <h3 class="text-center">Add An Album</h3>
                   <div class="row columns">
                     <label>Title
@@ -82,14 +82,14 @@
             <span class="label alert">
           <h3 class="text-left">Unlistened to Songs</h3>
           </span>  
-        {{#each Songs}}
+        {{#each songs}}
           {{#unless this.listened}}
-            <div> 
-              <form action="/api/songs" method="PUT">
+            <div class="song"> 
+              <form class="songUnlistened">
                 <p>Title:    {{this.title}}</p>  
                 <p>Artist: {{this.artist}}</p> 
                 <p>Review: {{this.review}}</p> 
-                 <button type="submit" class="warning button">Listened</button> 
+                 <button type="submit" class="warning button" data-id={{this.id}}>Listened</button> 
                 </form>  
             </div>
           {{/unless}}
@@ -100,7 +100,7 @@
        <span class="label success">
           <h3 class="text-right">Listened to Songs</h3>
           </span>
-        {{#each Songs}}
+        {{#each songs}}
           {{#if this.listened}}
             <div> 
              <form action="/api/songs/:id" method="DELETE">
@@ -120,21 +120,21 @@
     <div class="grid-x"> 
         <div class="cell medium-12">
             <div class="translucent-form-overlay">
-              <form action="/api/songs" method="POST">
+              <form class="song">
                 <h3 class="text-center">Add A Song</h3>
                   <div class="row columns">
                     <label>Title
-                    <input type="text" name="title">
+                    <input type="text" name="title" class="title-song">
                     </label>
                   </div>
                   <div class="row columns">
                     <label>Artist
-                    <input type="text" name="artist">
+                    <input type="text" name="artist" class="artist-song">
                     </label>
                   </div>
                   <div class="row columns">
                    <label>Review
-                    <input type="text" name="review" placeholder="Optional">
+                    <input type="text" name="review" placeholder="Optional" class="review-song">
                     </label>
                   </div>
                   <button type="submit" class="secondary button expanded search-button">Submit Song</button>
@@ -142,9 +142,35 @@
                 </div>
             </div>
         </div>  
-        </div> 
+        </div>  
+<br>
+<br>
+<br>
 
-           
-
-
+<div class="grid-container">
+  <div class="grid-x"> 
+    <div class="cell medium-12">
+      <div class="musicPlayer">
+        <h3 class="text-center">Full Stax Music Player (Powered by SoundCloud©️)</h3>
+          <div class="row columns"> 
+            <form id="playerSubmit">
+              <input type="text" placeholder="Please Enter a Song, Artist, Album, Etc..."> 
+              <button type="submit" class="primary button expanded search-button">Enjoy</button> 
+            </form> 
+            <div class="expanded button-group">
+              <a class="secondary button" id="prevBtn">PREVIOUS</a>
+              <a class="success button" id="playBtn">PLAY</a>
+              <a class="warning button" id="pauseBtn">PAUSE</a>
+              <a class="alert button" id="stopBtn">STOP</a> 
+              <a class="secondary button" id="nextBtn">NEXT</a>
+            </div> 
+              <div class="volumeSlider" class="align-center">
+                <input class="volumeStyle" id="volControl" type="range" min='0' max='100' value='100' step='1'
+                oninput="SetVolume(this.Value)" onchange="SetVolume(this.Value)"></input>
+              </div>
+          </div>
+      </div> 
+    </div>
+  </div> 
+</div>
 

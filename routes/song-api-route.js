@@ -28,10 +28,10 @@ module.exports = function(app) {
 
    // PUT route for updating songs
    app.put("/api/songs", function(req, res) {
-    db.Song.update(
-      req.body.listened, 
+    db.Song.update(req.body,
       {
-        where: { 
+        where: {  
+          //id: req.body.id,
           listened: '1'
         }
       }).then(function(dbSong) {

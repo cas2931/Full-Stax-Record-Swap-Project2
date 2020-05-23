@@ -3,7 +3,6 @@ form.login {
   margin-top: 50px;
 } 
 
-
 .translucent-form-overlay {
   max-width: 100%;
   width: 100%;
@@ -213,4 +212,39 @@ body {
     top: -14rem;
     max-height: 570px;
   }
+}
+div.album {
+  background-color: black;
+  color: white;
+  margin: 40px;
+  padding: 40px; 
+  width: 18vw;
+  height: 20vw
+}  
+div.song {
+  background-color: gray;
+  color: white;
+  margin: 40px;
+  padding: 40px; 
+  width: 18vw;
+  height: 20vw 
+}
+
+.container {
+  padding: 50px;
+}
+
+.grid-x {
+  padding-right: 75px;
+  padding-left: 75px;
+  /* margin: 100px; */
+}
+
+.text-center {
+  border: solid;
+  background-color: rgb(165, 216, 231);
+  margin: 10px;
+  padding: 1px; 
+  box-sizing: border-box;
+  position: center;
 }
