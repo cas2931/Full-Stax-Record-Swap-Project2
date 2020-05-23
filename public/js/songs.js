@@ -3,9 +3,8 @@ $(document).ready(function() {
     var songForm = $("form.song");
     var titleSong = $("input.title-song");
     var artistSong = $("input.artist-song");  
-    var reviewSong = $("input.review-song");
-
-    var songListenForm = $("form.songUnlistened")
+    var reviewSong = $("input.review-song"); 
+    //var songListenForm = $("form.songUnlistened"); 
   
     // When the form is submitted, we validate there's an email and password entered
     songForm.on("submit", function(event) {
@@ -45,23 +44,29 @@ $(document).ready(function() {
           console.log(err);
         });
     }
-  });
+  }); 
+ 
+  // songListenForm.on("submit", function(event) {
+  // event.preventDefault();  
 
-  songListenForm.on("submit", function(event) {
-  event.preventDefault(); 
-  function listenSong(listened) {
-    $.put("/api/songs", {
-      listened: '1',
-      UserId: localStorage.getItem("UserId")
-    })
-      .then(function(response) {
-          console.log(response);
-        window.location.reload();
-        //response.redirect(path.join(__dirname, "../views/user.handlebars"));
-        // If there's an error, log the error
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  } 
-});
+  // var songStatus = {
+  // listened: req.body.listened 
+  // }; 
+
+  // listenSong(songStatus.listened);
+
+  // function listenSong () {
+  //   $.put("/api/songs", {
+  //     listened: '1',
+  //     id: $(this).attr("data-id")
+  //   })
+  //     .then(function(response) {
+  //         console.log(response);
+  //       window.location.reload();
+  //       //response.redirect(path.join(__dirname, "../views/user.handlebars"));
+  //       // If there's an error, log the error
+  //     })
+  //     .catch(function(err) {
+  //       console.log(err);
+  //     }) 
+  //   });  

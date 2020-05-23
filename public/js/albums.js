@@ -5,8 +5,6 @@ $(document).ready(function() {
     var artistInput = $("input.artist-input");  
     var reviewInput = $("input.review-input"); 
 
-    var albumListenForm = $("form.albumUnlistened");
-
   
     // When the form is submitted, we validate there's an email and password entered
     albumForm.on("submit", function(event) {
@@ -48,12 +46,13 @@ $(document).ready(function() {
     }
   }); 
   
+  // var albumListenForm = $("form.albumUnlistened");
   // albumListenForm.on("submit", function(event) {
   // event.preventDefault(); 
-  // function listenAlbum(listened) {
+  // function listenAlbum() {
   //       $.put("/api/albums", {
   //         listened: '1',
-  //         //UserId: localStorage.getItem("UserId")
+  //         id: $(this).attr("data-id")
   //       })
   //         .then(function(response) {
   //             console.log(response);
