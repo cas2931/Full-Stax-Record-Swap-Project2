@@ -44,7 +44,7 @@ body {
   background-size: cover;
 } 
 .hero-section {
-  background: url("https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg") 50% no-repeat;
+  background: url("https://previews.123rf.com/images/jazzia/jazzia1506/jazzia150600002/40939528-music-shop-abstract-art-vector-illustration-neon-light-silhouettes-on-black-background-.jpg") 50% no-repeat;
   background-size: cover;
   height: 20vh;
   text-align: center;
@@ -219,14 +219,35 @@ div.album {
   color: white;
   margin: 40px;
   padding: 40px; 
-  width: 12vw;
-  height: 12vw
+  width: 14vw;
+  height: 14vw
 }  
 div.song {
   background-color: gray;
   color: white;
   margin: 40px;
   padding: 40px; 
-  width: 12vw;
-  height: 12vw 
+  width: 14vw;
+  height: 14vw 
+} 
+
+#apiPlayer { 
+  background: url('https://i.etsystatic.com/15993692/r/il/caa6fd/1536764180/il_794xN.1536764180_jmau.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
+h2 {background-color: yellow;
+  
+} 
+
+h3 {color: white
+
+} 
+h1
+
+{
+  background-color: purple;
 }
