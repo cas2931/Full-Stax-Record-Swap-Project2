@@ -3,7 +3,6 @@ form.login {
   margin-top: 50px;
 } 
 
-
 .translucent-form-overlay {
   max-width: 100%;
   width: 100%;
@@ -219,14 +218,39 @@ div.album {
   color: white;
   margin: 40px;
   padding: 40px; 
-  width: 12vw;
-  height: 12vw
+  width: 18vw;
+  height: 20vw
+
 }  
 div.song {
   background-color: gray;
   color: white;
   margin: 40px;
   padding: 40px; 
+
+  width: 18vw;
+  height: 20vw 
+}
+
+.container {
+  padding: 50px;
+}
+
+.grid-x {
+  padding-right: 75px;
+  padding-left: 75px;
+  /* margin: 100px; */
+}
+
+.text-center {
+  border: solid;
+  background-color: rgb(165, 216, 231);
+  margin: 10px;
+  padding: 1px; 
+  box-sizing: border-box;
+  position: center;
+}
   width: 12vw;
   height: 12vw 
 }
+

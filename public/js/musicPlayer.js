@@ -13,7 +13,9 @@ document.getElementById("pauseBtn").addEventListener('click', function (){
 document.getElementById("stopBtn").addEventListener('click', function (){ 
     players[currentSong].pause();
     players[currentSong].seek();
-});  
+}); 
+
+
 
 document.getElementById("nextBtn").addEventListener('click', function (){
     currentSong++; 
@@ -90,3 +92,4 @@ function SetVolume(val) {
     player.volume = val / 100;
     players[currentSong].setVolume(player.volume);
 }
+

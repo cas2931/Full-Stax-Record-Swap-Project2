@@ -5,6 +5,7 @@ $(document).ready(function() {
     var artistSong = $("input.artist-song");  
     var reviewSong = $("input.review-song"); 
     //var songListenForm = $("form.songUnlistened"); 
+
   
     // When the form is submitted, we validate there's an email and password entered
     songForm.on("submit", function(event) {
@@ -44,6 +45,7 @@ $(document).ready(function() {
           console.log(err);
         });
     }
+
   }); 
  
   // songListenForm.on("submit", function(event) {
@@ -70,3 +72,4 @@ $(document).ready(function() {
   //       console.log(err);
   //     }) 
   //   });  
+
