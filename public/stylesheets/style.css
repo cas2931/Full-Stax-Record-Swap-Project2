@@ -220,12 +220,14 @@ div.album {
   padding: 40px; 
   width: 18vw;
   height: 20vw
+
 }  
 div.song {
   background-color: gray;
   color: white;
   margin: 40px;
   padding: 40px; 
+
   width: 18vw;
   height: 20vw 
 }
@@ -248,3 +250,7 @@ div.song {
   box-sizing: border-box;
   position: center;
 }
+  width: 12vw;
+  height: 12vw 
+}
+

@@ -1,5 +1,6 @@
 {
   "development": {
+
     "username": "USERNAME",
     "password": "PASSWORD",
     "database": "full_stax_db",
