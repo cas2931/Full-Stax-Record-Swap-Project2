@@ -27,12 +27,9 @@
         {{#each albums}}
           {{#if this.listened}}
             <div> 
-          
               <p>Title:    {{this.title}}</p>  
               <p>Artist: {{this.artist}}</p> 
               <p>Review: {{this.review}}</p>  
-               
-              </form> 
             </div>
           {{/if}}
         {{/each}}
@@ -103,11 +100,9 @@
         {{#each songs}}
           {{#if this.listened}}
             <div> 
-             <form action="/api/songs/:id" method="DELETE">
                 <p>Title:    {{this.title}}</p>  
                 <p>Artist: {{this.artist}}</p> 
                 <p>Review: {{this.review}}</p>    
-              </form>
             </div>
           {{/if}}
         {{/each}} 

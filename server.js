@@ -40,7 +40,7 @@ app.get('/user/:id', async function (req, res) {
   
   res.render('user', {albums, songs});  
   //res.render(path.join(__dirname, "../views/user.handlebars"));
-}); 
+});  
 
 
 // Requiring our routes
